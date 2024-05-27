@@ -17,8 +17,8 @@
 </head>
 <body class="container">
 <h1>Day la trang sinh vien</h1>
-<form action="">
-    <input name="ten">
+<form action="/sinh-vien/search" method="get">
+    <input name="keyword">
     <button>Search</button>
 </form>
 <form method="post" action="/sinh-vien/add">

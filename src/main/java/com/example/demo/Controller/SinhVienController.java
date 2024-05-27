@@ -7,6 +7,7 @@ import com.example.demo.service.impl.SinhVienServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -86,6 +87,12 @@ public class SinhVienController {
             }
         }
         return "redirect:/sinh-vien";
+    }
+
+    @GetMapping("/sinh-vien/search")
+    public String search(Model model, @RequestParam("keyword") String keyword){
+        model.addAttribute("sv",rp.searchByKeyword(keyword.trim()));
+        return "sinh-vien";
     }
 
 }

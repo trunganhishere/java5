@@ -55,7 +55,7 @@ public class SinhVienController {
 //        String gioiTinh = request.getParameter("gioiTinh");
 //        String trangThai = request.getParameter("trangThai");
 //        SinhVien sv = new SinhVien(Integer.valueOf(id),hoTen,diaChi,gioiTinh,trangThai);
-        rp.findAll().add(sv);
+        rp.save(sv);
         return "redirect:/sinh-vien";
     }
 
@@ -71,14 +71,8 @@ public class SinhVienController {
     public String detail(Model model,
             @RequestParam("id") Integer id
     ){
-        SinhVien sv = new SinhVien();
-        for(int i = 0 ; i < rp.findAll().size() ; i ++){
-            if(id.equals(rp.findAll().get(i).getId())){
-                sv = rp.findAll().get(i);
-            }
-        }
         model.addAttribute("sv",rp.findAll());
-        model.addAttribute("detail",sv);
+        model.addAttribute("detail",rp.getOne(id));
         return "sinh-vien";
     }
 
@@ -88,10 +82,7 @@ public class SinhVienController {
     ){
         for(SinhVien sv : rp.findAll()){
             if(String.valueOf(sv.getId()).equals(sinhVien.getId())){
-                sv.setDiaChi(sinhVien.getDiaChi());
-                sv.setGioiTinh(sinhVien.getGioiTinh());
-                sv.setTrangThai(sinhVien.getTrangThai());
-                sv.setHoTen(sinhVien.getHoTen());
+                rp.save(sinhVien);
             }
         }
         return "redirect:/sinh-vien";

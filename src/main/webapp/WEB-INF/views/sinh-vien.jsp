@@ -36,28 +36,28 @@
     </div>
     <label class="form-label">Gioi tinh</label>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="gioiTinh" id="flexRadioDefault1" value="Nam"${detail.gioiTinh=="Nam"?"checked":""}>
+        <input class="form-check-input" type="radio" name="gioiTinh" id="male" value="Male"${detail.gioiTinh=="Male"?"checked":""}>
         <label class="form-check-label" for="flexRadioDefault1">
-            Nam
+            Male
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="gioiTinh" id="flexRadioDefault2" checked value="Nu" ${detail.gioiTinh=="Nu"?"checked":""}>
+        <input class="form-check-input" type="radio" name="gioiTinh" id="female" checked value="Female" ${detail.gioiTinh=="Female"?"checked":""}>
         <label class="form-check-label" for="flexRadioDefault2">
-            Nu
+            Female
         </label>
     </div>
     <label for="diaChi" class="form-label">Trang thai</label>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="trangThai" id="flexRadioDefault1" value="Hoat dong" ${detail.trangThai=="Hoat dong"?"checked":""}  >
+        <input class="form-check-input" type="radio" name="trangThai" id="flexRadioDefault1" value="Active" ${detail.trangThai=="Active"?"checked":""}  >
         <label class="form-check-label" for="flexRadioDefault1">
-            Hoat dong
+            Active
         </label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="radio" name="trangThai" id="flexRadioDefault2" checked value="Ngung hoat dong" ${detail.trangThai=="Ngung hoat dong"?"checked":""}>
+        <input class="form-check-input" type="radio" name="trangThai" id="flexRadioDefault2" checked value="Inactive" ${detail.trangThai=="Inactive"?"checked":""}>
         <label class="form-check-label" for="flexRadioDefault2">
-            Ngung hoat dong
+            Inactive
         </label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
